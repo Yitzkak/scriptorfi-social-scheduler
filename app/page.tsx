@@ -243,11 +243,9 @@ export default function Home() {
             Upload your strategy markdown to generate and schedule 14 days of content
           </p>
 
-          <div 
-            className="border-2 border-dashed border-gray-800 rounded-2xl p-12 md:p-16 
+          <label className="border-2 border-dashed border-gray-800 rounded-2xl p-12 md:p-16 
                        hover:border-teal/30 hover:bg-teal/[0.02] transition-all duration-300 cursor-pointer
-                       group"
-            onClick={() => fileInputRef.current?.click()}
+                       group block"
           >
             <input
               ref={fileInputRef}
@@ -263,7 +261,7 @@ export default function Home() {
             <p className="text-gray-700 text-xs">
               or click to browse &nbsp;·&nbsp; <code className="text-teal bg-teal/10 px-2 py-0.5 rounded text-xs">.md</code>
             </p>
-          </div>
+          </label>
 
           {error && (
             <div className="mt-6 bg-red-500/10 border border-red-500/20 text-red-400 rounded-xl p-4 text-sm animate-fade-in">
