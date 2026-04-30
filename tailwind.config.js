@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors');
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,6 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        ...colors,
         teal: {
           DEFAULT: '#0FFCBE',
           50: '#E6FFFA',
