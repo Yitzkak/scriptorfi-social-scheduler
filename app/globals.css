@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-black text-white font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-[#0FFCBE]/30 text-white;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-brand-card border border-gray-800/80 rounded-xl;
+  }
+  
+  .card-hover {
+    @apply card transition-all duration-200 hover:border-teal/30 hover:shadow-lg hover:shadow-teal/5;
+  }
+
+  .card-active {
+    @apply card border-teal/40 bg-teal/5;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 bg-teal text-black 
+           font-medium rounded-lg transition-all duration-200 
+           hover:bg-teal-400 active:scale-[0.97] 
+           disabled:opacity-30 disabled:cursor-not-allowed disabled:active:scale-100;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-2 
+           text-gray-400 hover:text-white hover:bg-gray-800/80 
+           rounded-lg transition-all duration-200 text-sm;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded-lg 
+           text-white text-sm placeholder-gray-500 
+           focus:outline-none focus:border-teal/50 focus:ring-1 focus:ring-teal/30 
+           transition-all duration-200;
+  }
+
+  .copy-field {
+    @apply bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden;
+  }
+
+  .platform-tab {
+    @apply flex items-center gap-2 px-4 py-2.5 rounded-lg transition-all duration-200 text-sm font-medium;
+  }
+
+  .platform-tab.active {
+    @apply bg-teal text-black;
+  }
+
+  .platform-tab.inactive {
+    @apply bg-gray-900 text-gray-400 hover:bg-gray-800 hover:text-gray-200;
+  }
+
+  .day-card {
+    @apply p-3 rounded-xl border transition-all duration-200 cursor-pointer;
+  }
+
+  .day-card.inactive {
+    @apply bg-gray-900/50 border-gray-800/50 hover:bg-gray-800/50 hover:border-gray-700;
+  }
+
+  .day-card.active {
+    @apply bg-teal/10 border-teal/40;
+  }
+
+  .day-card.completed {
+    @apply bg-teal/5 border-teal/20;
+  }
+}
+
+@layer utilities {
+  .text-teal {
+    @apply text-[#0FFCBE];
+  }
+  .bg-teal {
+    @apply bg-[#0FFCBE];
+  }
+  .border-teal {
+    @apply border-[#0FFCBE];
+  }
+  .ring-teal {
+    @apply ring-[#0FFCBE];
+  }
+  .from-teal {
+    @apply from-[#0FFCBE];
+  }
+  .to-teal {
+    @apply to-[#0FFCBE];
+  }
+  .via-teal {
+    @apply via-[#0FFCBE];
+  }
+  .divide-teal {
+    @apply divide-[#0FFCBE];
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-800 rounded-full hover:bg-gray-700 transition-colors;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  @apply border-2 border-teal/30 rounded-full;
+  border-top-color: #0FFCBE;
+  width: 20px;
+  height: 20px;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-teal to-teal-300;
+}
